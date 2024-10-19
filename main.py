@@ -15,7 +15,8 @@ from rosreestr2coord import Area
 import geojson2kml
 
 # Загрузка прокси
-PROXIES = json.loads("proxy.json")
+with open('proxy.json', 'r', encoding='utf-8') as f:
+    PROXIES = json.load(f)
 
 # Регулярное выражение для проверки кадастрового номера
 CADASTRAL_NUMBER_REGEX = r'^\d{1,2}:\d{1,2}:(\d|\d{6,7}):\d{1,10}$'
